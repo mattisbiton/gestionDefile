@@ -1,0 +1,157 @@
+@import "stylesheetNav.css";
+
+.content {
+    padding-top: 10vh;
+    height: 90vh;
+    background-image: url("../img/background.jpg");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login {
+    margin: 0 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.form {
+    padding: 30px 40px;
+    background-color: white;
+    border-top-left-radius: 0;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    row-gap: 10px;
+}
+
+#status {
+    margin-bottom: 12px;
+    display: inherit;
+    color: tomato;
+}
+
+.role {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 15px;
+    row-gap: 15px;
+    justify-content: center;
+}
+
+.role input[type="radio"].radioRole {
+  display: none;
+}
+
+.role input[type="radio"].radioRole + label {
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 15px;
+  color: black;
+  border: 2px solid lightblue;
+  transition: all 0.2s ease-in-out;
+}
+
+.formInputs {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    row-gap: 20px;
+}
+
+input[type="radio"].radioRole:hover + label, input[type="radio"].radioRole:checked + label {
+  background-color: rgb(173,216,230);
+}
+
+.input {
+    display: grid;
+}
+
+.input label {
+    margin-bottom: 7px;
+}
+
+form label {
+    text-align: left;
+}
+
+form input[type=text], input[type=password] {
+    border-top-left-radius: 0;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+form input {
+    margin-bottom: 10px;
+    border: 2px solid black;
+    padding: 15px;
+    outline: none;
+    border-radius: 15px;
+    background-color: #f5f5f5;
+}
+
+form input:focus {
+    border: 2px solid lightblue;
+}
+
+form input[type=submit] {
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    background-color: lightblue;
+    cursor: pointer;
+    transition: .2s ease-in-out;
+}
+
+form input[type=submit]:hover {
+    background-color: skyblue;
+}
+
+.noAccountWrapper {
+    cursor: pointer;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 5px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.noAccountWrapper > * {
+    padding: 15px 25px;
+}
+
+.active {
+    background-color: white;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.noAccount {
+    border-top-right-radius: 15px;
+}
+
+.noAccount a {
+    color: inherit;
+    text-decoration: none;
+}
+
+

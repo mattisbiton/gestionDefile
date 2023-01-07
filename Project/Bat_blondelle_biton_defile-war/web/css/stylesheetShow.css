@@ -1,0 +1,64 @@
+@import "stylesheetNav.css";
+
+.content {
+    padding: 15vh 0;
+}
+
+.content h1 {
+    margin-bottom: 40px;
+}
+
+a {
+    color: inherit;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    column-gap: 50px;
+    row-gap: 50px;
+}
+
+.table {
+    width: 80%;
+    margin: 0 auto;
+}
+
+table {
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+tr:first-child {
+  background-color: lightblue;
+}
+
+th {
+  padding: 15px 10px;
+}
+
+tbdoy tr:nth-child(even) {
+  background-color: white;
+}
+
+tbody tr:nth-child(odd):not(:first-child) {
+  background-color: #EFEFEF;
+}
+
+td {
+    padding: 10px 10px;
+}
+
+h2 {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 850px) {
+    table {
+        overflow: scroll;
+        display: block;
+    }
+}

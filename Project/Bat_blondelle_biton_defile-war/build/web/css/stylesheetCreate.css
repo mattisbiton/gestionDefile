@@ -1,0 +1,129 @@
+@import "stylesheetNav.css";
+@import "stylesheetSelect.css";
+
+.creationForm {
+    padding-top: 15vh;
+    padding-bottom: 5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.creationForm h1 {
+    margin-bottom: 30px;
+}
+
+.formContainerGrid {
+    display:grid;
+}
+
+.formContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 25px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form input {
+    width: 400px;
+}
+
+form select {
+    width: 430px;
+}
+
+.left, .right {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.left label, .right label {
+    margin-bottom: 10px;
+}
+
+.left input, .left select, .right input, .right select {
+    margin-bottom: 25px;
+}
+
+form label {
+    text-align: left;
+}
+
+.required {
+    color: tomato;
+}
+
+form input[type=text], input[type=password], input[type=tel], input[type=number], input[type=date], select {
+    border: 0;
+    border-bottom: 5px solid transparent;
+    outline: none;
+}
+
+form input, select {
+    padding: 15px;
+    background-color: whitesmoke;
+    transition: all .3s ease-in-out;
+}
+
+form input:focus[type=text], input:focus[type=password], input:focus[type=tel], input:focus[type=number], input:focus[type=date], select:focus {
+    background-color: rgba(173, 216, 230, .2);
+    border-bottom: 5px solid lightblue;
+}
+
+.submitReset {
+    display: flex;
+    column-gap: 15px;
+}
+
+form input[name="submit"] {
+    width: 100%;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    border-radius: 15px;
+    background-color: lightblue;
+    cursor: pointer;
+    transition: .2s ease-in-out;
+}
+
+form input[name="submit"]:hover {
+    background-color: skyblue;
+}
+
+#status {
+    margin-bottom: 25px;
+    display: inherit;
+    color: tomato;
+}
+
+input[name="delete"] {
+    width: 100%;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    border-radius: 15px;
+    background-color: tomato;
+    cursor: pointer;
+    transition: .2s ease-in-out;
+}
+
+input[name="delete"]:hover {
+    background-color: orangered;
+}
+
+@media screen and (max-width: 560px) {
+    .creationForm {
+        padding-top: 12vh;
+    }
+}
+
+
+
