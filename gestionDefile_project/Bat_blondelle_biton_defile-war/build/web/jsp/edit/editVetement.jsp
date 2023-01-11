@@ -22,7 +22,7 @@
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👗</text></svg>">
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <meta charset="UTF-8">
-        <title>Créer un vêtement — gestionDefile</title>
+        <title>Modifier un vêtement — gestionDefile</title>
         <jsp:useBean id="listeVetements" scope="request" class="java.util.List"></jsp:useBean>
         <jsp:useBean id="listeBijoux" scope="request" class="java.util.List"></jsp:useBean>
         <jsp:useBean id="listeChaussures" scope="request" class="java.util.List"></jsp:useBean>
@@ -106,7 +106,11 @@
                                 <option value="L">Taille L</option>
                                 <option value="XL">Taille XL</option>
                                 <option value="XXL">Taille XXL</option>
-                            </select>  
+                            </select>
+                            <label for="intOrdre">L'ordre d'apparition est à modifier dans <a href="servletDefile?action=editOrdre" target="_blank"><i>Défilés</i></a></label>
+                            <input type="number" min="0" id="intOrdre" name="intOrdre" required hidden placeholder="2">                            
+                        </div>
+                        <div class="right">
                             <label for="idMannequin">Mannequin<span class="required">*</span></label>
                             <select id="idMannequin" name="idMannequin" required>
                                 <option class="disabled" value="" disabled selected>Veuillez choisir un mannequin</option>
@@ -114,9 +118,6 @@
                                     <option value ="<%=m.getId()%>"><%=m.getPrenom()%> <%=m.getNom()%></option>
                                 <% }%>
                             </select>
-                        </div>
-                        <div class="right">
-                            
                             <label for="idDefile">Défilé concerné<span class="required">*</span></label>
                             <select id="idDefile" name="idDefile" required>
                                 <option class="disabled" value="" disabled selected>Veuillez choisir un défilé</option>
@@ -124,33 +125,29 @@
                                     <option value ="<%=d.getId()%>"><%=d.getNomDefile()%></option>
                                 <% }%>
                             </select>
-                            <label for="idBijou">Bijou</label>
+                            <label for="idBijou">Bijou<span class="required">*</span></label>
                             <select id="idBijou" name="idBijou">
                                 <option class="disabled" value="" disabled selected>Veuillez choisir un bijou</option>
                                 <% for (Bijoux b :leBijou) {%>
                                     <option value ="<%=b.getId()%>"><%=b.getNom()%></option>
                                 <% }%>
                             </select>
-                            <label for="idChaussures">Chaussures</label>
+                            <label for="idChaussures">Chaussures<span class="required">*</span></label>
                             <select id="idChaussures" name="idChaussures">
                                 <option class="disabled" value="" disabled selected>Veuillez choisir une paire de chaussures</option>
                                 <% for (Chaussures ch :lesChaussures) {%>
                                     <option value ="<%=ch.getId()%>"><%=ch.getNom()%> (Taille <%=ch.getTaille()%>)</option>
                                 <% }%>
                             </select>
-                            <label for="idVestimentaire">Accessoire vestimentaire</label>
+                            <label for="idVestimentaire">Accessoire vestimentaire<span class="required">*</span></label>
                             <select id="idVestimentaire" name="idVestimentaire">
                                 <option class="disabled" value="" disabled selected>Veuillez choisir un accessoire vestimentaire</option>
                                 <% for (Vestimentaire v :AccessoireVestimentaire) {%>
                                     <option value ="<%=v.getId()%>"><%=v.getType()%> - <%=v.getNom()%></option>
                                 <% }%>
                             </select>
-                            <label for="intOrdre">Ordre d'apparition<span class="required">*</span></label>
-                            <input type="number" min="0" id="intOrdre" name="intOrdre" required placeholder="2">
-                            
                             <input type="hidden" name="accountID" value="${sessionScope.accountID}">
                             <input type="hidden" name="action" value="submitEditVetement">
-                            <label>&nbsp;</label>
                             <div class="submitReset">
                                 <input name="submit" type="submit" value="Modifier">
                                 <input name="delete" type="submit" value="Supprimer"

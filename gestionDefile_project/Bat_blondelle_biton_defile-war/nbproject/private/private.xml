@@ -3,12 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/matti/Documents/NetBeansProjects/Bat_blondelle_biton_defile/Bat_blondelle_biton_defile-war/web/jsp/results/searchByCouturier.jsp</file>
-            <file>file:/C:/Users/matti/Documents/NetBeansProjects/Bat_blondelle_biton_defile/Bat_blondelle_biton_defile-war/web/jsp/results/searchByMannequin.jsp</file>
-            <file>file:/C:/Users/matti/Documents/NetBeansProjects/Bat_blondelle_biton_defile/Bat_blondelle_biton_defile-war/web/jsp/results/searchByLieu.jsp</file>
-            <file>file:/C:/Users/matti/Documents/NetBeansProjects/Bat_blondelle_biton_defile/Bat_blondelle_biton_defile-war/web/jsp/results/searchByCout.jsp</file>
-            <file>file:/C:/Users/matti/Documents/NetBeansProjects/Bat_blondelle_biton_defile/Bat_blondelle_biton_defile-war/web/jsp/results/searchByDate.jsp</file>
+            <file>file:/C:/Users/matti/Documents/NetBeansProjects/Bat_blondelle_biton_defile/Bat_blondelle_biton_defile-war/web/css/stylesheetEdit.css</file>
+            <file>file:/C:/Users/matti/Documents/NetBeansProjects/Bat_blondelle_biton_defile/Bat_blondelle_biton_defile-war/web/jsp/edit/editOrdreDrag.jsp</file>
+            <file>file:/C:/Users/matti/Documents/NetBeansProjects/Bat_blondelle_biton_defile/Bat_blondelle_biton_defile-war/web/jsp/edit/editOrganisateur.jsp</file>
+            <file>file:/C:/Users/matti/Documents/NetBeansProjects/Bat_blondelle_biton_defile/Bat_blondelle_biton_defile-war/web/jsp/edit/editVetement.jsp</file>
             <file>file:/C:/Users/matti/Documents/NetBeansProjects/Bat_blondelle_biton_defile/Bat_blondelle_biton_defile-war/src/java/servlet/servletDefile.java</file>
+            <file>file:/C:/Users/matti/Documents/NetBeansProjects/Bat_blondelle_biton_defile/Bat_blondelle_biton_defile-war/web/menu.jsp</file>
         </group>
     </open-files>
 </project-private>

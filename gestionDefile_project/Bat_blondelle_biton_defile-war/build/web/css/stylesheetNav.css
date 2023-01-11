@@ -256,7 +256,7 @@ footer .logo {
     z-index: -1;
 }
 
-@media screen and (max-width: 560px) {
+@media screen and (max-width: 920px) {
     .navbar ul {
         display: none;
     }

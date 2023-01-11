@@ -157,16 +157,24 @@ response.setDateHeader ("Expires", 0);
                                         <span id="status"><% out.println(attribut); %></span>
                                     </div>
                                     <div class="options couturier">
-                                        <a href="servletDefile?action=rechercheDefiles"><div class="cardsContainer active" id="defiles">
-                                            <div class="card">
+                                        <div class="cardsContainer active" id="defiles">
+                                            <a href="servletDefile?action=rechercheDefiles"><div class="card">
                                                 <div class="cardImg">
                                                     <img src="img/defile.jpg">
                                                 </div>
                                                 <div class="cardDesc">
                                                     <p>Rechercher un défilé</p>
                                                 </div>
-                                            </div>
-                                        </div></a>
+                                            </div></a>
+                                            <a href="servletDefile?action=editOrdre"><div class="card">
+                                                <div class="cardImg">
+                                                    <img src="img/ordres.jpg">
+                                                </div>
+                                                <div class="cardDesc">
+                                                    <p>Modifier les ordres</p>
+                                                </div>
+                                            </div></a>
+                                        </div>
                                         <div class="cardsContainer" id="mannequins">
                                             <a href="jsp/create/createMannequin.jsp"><div class="card">
                                                 <div class="cardImg">

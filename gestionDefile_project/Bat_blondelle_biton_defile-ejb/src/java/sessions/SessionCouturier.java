@@ -323,6 +323,16 @@ Vestimentaire vest = vestimentaireFacade.rechercheVestimentaire(idVest);
     public Mannequin rechercheMannequinID(long id) {
         return mannequinFacade.rechercheMannequin(id);
     }
+
+    @Override
+    public List returnVetementsDefileCouturier(long idDefile) {
+        return vetementFacade.rechercheVetementsDefileCouturier(idDefile);
+    }
+
+    @Override
+    public void updateOrdreVetement(long idVetement, int ordrePassage) {
+        vetementFacade.updateOrdrePassage(idVetement, ordrePassage);
+    }
     
     
     

@@ -86,5 +86,9 @@ public interface SessionCouturierLocal {
     List rechercheDefilesCouturier(long id);
 
     Mannequin rechercheMannequinID(long id);
+
+    List returnVetementsDefileCouturier(long idDefile);
+
+    void updateOrdreVetement(long idVetement, int ordrePassage);
     
 }

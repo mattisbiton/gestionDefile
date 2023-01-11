@@ -87,11 +87,9 @@ public class servletDefile extends HttpServlet {
         
         if(null == act) {
             jspClient="/home.jsp";
-            request.setAttribute("message", "Rien à déclarer. :-)");
         } else switch (act) {
             case "vide":
                 jspClient="/home.jsp";
-                request.setAttribute("message", "Rien à déclarer. :-)");
                 break;
             case "login":
                 String role = request.getParameter("radioRole");
@@ -154,7 +152,7 @@ public class servletDefile extends HttpServlet {
                         break;
                 }   break;
             case "createCouturier":
-                jspClient = "createCouturier.jsp";
+                jspClient = "/menu.jsp";
                 doActionCreerCouturier(request, response);
                 break;
             case "createOrganisateur":
@@ -162,7 +160,7 @@ public class servletDefile extends HttpServlet {
                 doActionCreerOrganisateur(request, response);
                 break;
             case "createMannequin":
-                jspClient = "/jsp/create/createMannequin.jsp";
+                jspClient = "/menu.jsp";
                 doActionCreerMannequin(request, response);
                 break;
             case "createLieu":
@@ -392,10 +390,7 @@ public class servletDefile extends HttpServlet {
                     long idCouturier = (Long) sessionRole.getAttribute("accountID");
                     jspClient = "/jsp/person/vetementsCouturier.jsp?id=" + idCouturier;
                     Collection <Vetement> listV = sessionCouturier.RechercherVetCouturier(idCouturier);
-                    for(Vetement vetement : listV) {
-                        int cout = sessionCouturier.afficherCoutVetement(vetement);
-                        System.out.println(cout);
-                    }       request.setAttribute("listeVetements", listV);
+                    request.setAttribute("listeVetements", listV);
                     break;
                 }
             case "defilesOrganisateur":
@@ -595,6 +590,43 @@ public class servletDefile extends HttpServlet {
                     request.setAttribute("listeInvites", listInvit);                
                     break;
                 }
+            case "editOrdre":
+                {
+                    HttpSession sessionRole = request.getSession(true);
+                    long idCouturier = (Long) sessionRole.getAttribute("accountID");
+                    jspClient = "/jsp/edit/editOrdre.jsp";
+                    Collection <Defile> listD = sessionCouturier.rechercheDefilesCouturier(idCouturier);
+                    request.setAttribute("listeDefiles", listD);
+                    Map<Defile, List<Vetement>> defileVetements = new HashMap<>();
+                    for(Defile defile : listD) {
+                        List<Vetement> listV = sessionCouturier.returnVetementsDefileCouturier(defile.getId());
+                        defileVetements.put(defile, listV);
+                    }
+                    request.setAttribute("defileVetements", defileVetements);
+                    break;
+                }
+            case "choixDefile":
+                {
+                    String idDefileString = request.getParameter("idDefile");
+                    long idDefile = Long.parseLong(idDefileString);
+                    List<Vetement> listV = sessionCouturier.returnVetementsDefileCouturier(idDefile);
+                    System.out.println(listV);
+                    request.setAttribute("listeVetements", listV);
+                    jspClient = "/jsp/edit/editOrdreDrag.jsp";
+                    break;
+                }
+            case "submitChangeOrdre":
+                List<Vetement> leVetement = (List<Vetement>) request.getSession().getAttribute("leVetement");
+                for (int i = 0; i < leVetement.size(); i++) {
+                    String ordreValue = request.getParameter("ordreV_" + i);
+                    int newValue = Integer.parseInt(ordreValue);
+                    if(leVetement.get(i).getOrdre().getOrdrePassage() != newValue) {
+                        sessionCouturier.updateOrdreVetement(leVetement.get(i).getId(), newValue);
+                    }
+                }
+                jspClient = "/menu.jsp";
+                request.setAttribute("message", "L'ordre des vêtements a bien été modifié.");
+                break;                
             default:
                 break;
         }
@@ -1065,6 +1097,7 @@ public class servletDefile extends HttpServlet {
                 long idVestimentaire = Long.parseLong(idVestimentaireString);
                 String ordreString = request.getParameter("intOrdre");
                 int intOrdre = Integer.parseInt(ordreString);
+                System.out.println(intOrdre);
                 
                 if(editClicked != null) {
                     sessionCouturier.modifierVetement(nomVetement, idVetement, dateCreation, idDefile, idMannequin, idBijou, idChaussures, idVestimentaire, prixVetement, tailleVetement, intOrdre);

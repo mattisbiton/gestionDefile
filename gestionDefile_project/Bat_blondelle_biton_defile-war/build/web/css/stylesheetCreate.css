@@ -119,6 +119,10 @@ input[name="delete"]:hover {
     background-color: orangered;
 }
 
+a {
+    color: black;
+}
+
 @media screen and (max-width: 560px) {
     .creationForm {
         padding-top: 12vh;

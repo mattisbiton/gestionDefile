@@ -1,0 +1,99 @@
+@import "stylesheetNav.css";
+
+.content {
+    padding: 15vh 0;
+}
+
+.content h1 {
+    margin-bottom: 40px;
+}
+
+.searches {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 15px;
+    row-gap: 15px;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.searches input[type="radio"].radioSearch {
+  display: none;
+}
+
+.searches input[type="radio"].radioSearch + label {
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 15px;
+  color: black;
+  border: 2px solid lightblue;
+  transition: all 0.2s ease-in-out;
+}
+
+.searches input[type="radio"].radioSearch:hover + label, input[type="radio"].radioSearch:checked + label {
+  background-color: rgb(173,216,230);
+}
+
+.searchBar {
+    display: none;
+}
+
+.form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.search-field {
+    width: 75%;
+    padding: 15px 35px 15px 15px;
+    border: 2px solid black;
+    border-radius: 15px;
+    outline: none;
+}
+
+.search-intervalle {
+    width: 20%;
+    padding: 15px 35px 15px 15px;
+    border: 2px solid black;
+    border-radius: 15px;
+    outline: none;
+    margin-right: 10px;
+}
+
+.search-field.date {
+    width: 25%;
+}
+
+.search-field.cout {
+    width: 65%;
+}
+
+.search-button {
+  padding: 0 10px;
+  background: lightblue;
+  border: 2px solid black;
+  border-left: none;
+  outline: none;
+  margin-left: -33px;
+  border-radius: 0 15px 15px 0; 
+}
+
+.search-intervalle-button {
+    padding: 0 10px;
+    background: lightblue;
+    border: 2px solid black;
+    outline: none;
+    border-radius: 15px;
+}
+
+.search-button:hover{
+  cursor:pointer;
+  background:skyblue;
+}
+
+.search-intervalle-button:hover{
+  cursor:pointer;
+  background:skyblue;
+}

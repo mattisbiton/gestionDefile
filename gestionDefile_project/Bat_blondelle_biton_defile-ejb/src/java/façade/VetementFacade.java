@@ -119,4 +119,27 @@ public class VetementFacade extends AbstractFacade<Vetement> {
         List<Vetement> result = req.getResultList();
         return result;
     }
+
+    public List rechercheVetementsDefileCouturier(long idDefile) {
+        Vetement v = null;
+        String txt = "SELECT v FROM Vetement v WHERE v.ordre.leDefile.id=:idDefile";
+        Query req = getEntityManager().createQuery(txt);
+        req = req.setParameter("idDefile",idDefile);
+        List<Vetement> result = req.getResultList();
+        return result;
+    }
+
+    public void updateOrdrePassage(long idVetement, int ordrePassage) {
+        String txt = "UPDATE Ordre o " +
+        "SET o.ordrePassage = :ordrePassage " +
+        "WHERE o.id IN (" +
+        "    SELECT v.ordre.id " +
+        "    FROM Vetement v " +
+        "    WHERE v.id = :idVetement" +
+        ")";
+        Query req = getEntityManager().createQuery(txt);
+        req = req.setParameter("ordrePassage", ordrePassage);
+        req = req.setParameter("idVetement", idVetement);
+        req.executeUpdate();
+    }
 }

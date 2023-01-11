@@ -1,0 +1,146 @@
+@import "stylesheetNav.css";
+
+.content {
+    padding: 15vh 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+form {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+form input {
+    width: 400px;
+}
+
+form input[type=number] {
+    width: 50px;
+}
+
+form select {
+    width: 430px;
+}
+
+form label {
+    margin-bottom: 10px;
+}
+
+form input[type=text], input[type=password], input[type=tel], input[type=number], input[type=date], select {
+    border: 0;
+    border-bottom: 5px solid transparent;
+    outline: none;
+}
+
+form input, select {
+    padding: 15px;
+    background-color: whitesmoke;
+    transition: all .3s ease-in-out;
+}
+
+form input:focus[type=text], input:focus[type=password], input:focus[type=tel], input:focus[type=number], input:focus[type=date], select:focus {
+    background-color: rgba(173, 216, 230, .2);
+    border-bottom: 5px solid lightblue;
+}
+
+form input[name="submit"] {
+    width: 100%;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    border-radius: 15px;
+    background-color: lightblue;
+    cursor: pointer;
+    transition: .2s ease-in-out;
+}
+
+form input[name="submit"]:hover {
+    background-color: skyblue;
+}
+
+form input[name="submit"]:disabled {
+    background-color: gainsboro;
+}
+
+form input[name="submit"]:disabled {
+    background-color: gainsboro;
+}
+
+#status {
+    margin-bottom: 25px;
+    display: inherit;
+    color: tomato;
+}
+
+input[name="delete"] {
+    width: 100%;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    border-radius: 15px;
+    background-color: tomato;
+    cursor: pointer;
+    transition: .2s ease-in-out;
+}
+
+input[name="delete"]:hover {
+    background-color: orangered;
+}
+
+a {
+    color: black;
+}
+
+.list-group {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.col {
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  max-width: 100%;
+}
+
+#vetements {
+    padding: 10px;
+}
+
+.item {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 920px){
+    form input[type=number] {
+        width: 50px;
+    }
+    
+    form input {
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 480px){
+    form input[type=number] {
+        width: 50px;
+    }
+    
+    form input {
+        width: 200px;
+    }
+}

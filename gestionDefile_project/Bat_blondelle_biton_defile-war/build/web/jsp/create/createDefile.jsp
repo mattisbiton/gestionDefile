@@ -54,7 +54,7 @@
             
             <div class="creationForm">
                 <h1>Créer un défilé</h1>
-                <form method="post" action="../../servletDefile">
+                <form method="post" action="servletDefile">
                     <center><span id="status"><% out.println(attribut); %></span></center>
                     <div class="formContainer">
                         <div class="left">
