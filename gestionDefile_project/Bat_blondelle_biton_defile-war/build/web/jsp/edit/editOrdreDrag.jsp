@@ -95,8 +95,10 @@
 
                 if (isDuplicate) {
                     document.querySelector("input[type='submit']").disabled = true;
+                    document.querySelector("input[type='submit'").style.cursor = "not-allowed";
                 } else {
                     document.querySelector("input[type='submit']").disabled = false;
+                    document.querySelector("input[type='submit']").style.cursor = "auto";
                 }
             }
 

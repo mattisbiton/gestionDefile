@@ -146,6 +146,12 @@ body {
     }
 }
 
+@media screen and (max-width: 920px) {
+    .container {
+        margin-top: 36px;
+    }
+}
+
 @media screen and (max-width: 800px) {
     .container {
         display: flex;
@@ -154,6 +160,10 @@ body {
     
     .menu {
         box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    }
+    
+    .card {
+        width: 200px;
     }
     
     .item.active::after {
@@ -165,10 +175,3 @@ body {
         margin-left: 20px;
     }
 }
-
-@media screen and (max-width: 560px) {
-    .container {
-        margin-top: 36px;
-    }
-}
-
